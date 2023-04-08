@@ -119,7 +119,7 @@ class _EditfilePageState extends State<EditfilePage> {
                           ),
                         ),
                         Text(
-                          "Created on " + date.toString(),
+                          "Created on $date",
                           style: GoogleFonts.nunito(
                               textStyle: GoogleFonts.leagueSpartan(
                             color: Colors.black,
@@ -503,6 +503,7 @@ class _EditfilePageState extends State<EditfilePage> {
                               backgroundColor: const Color(Colorz.lightblue),
                               textColor: Colors.black,
                               fontSize: 12.sp);
+                          return null;
                         });
                         setState(() {
                           isScan = false;
@@ -831,7 +832,6 @@ class _EditfilePageState extends State<EditfilePage> {
           TextButton(
             onPressed: () async {
               var newfolderID = int.parse(getid);
-              assert(newfolderID is int);
               await mydatabase
                   .updateBook(Book(
                     id: newfolderID,

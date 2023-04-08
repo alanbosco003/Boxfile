@@ -5,8 +5,8 @@ import 'package:sizer/sizer.dart';
 import '../constants/colors.dart';
 
 class MyAppCiricleProgress extends StatelessWidget {
-  String text;
-  MyAppCiricleProgress(this.text, {Key? key}) : super(key: key);
+  final String text;
+  const MyAppCiricleProgress(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
