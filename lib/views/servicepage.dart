@@ -191,7 +191,7 @@ class _ServicesPageState extends State<ServicesPage> {
                   });
                 }
               },
-              child: scanbox(1, "Capture image from camera", camera)),
+              child: scanbox(1, "Capture image from camera", "", camera)),
           GestureDetector(
               onTap: () async {
                 setState(() {
@@ -204,7 +204,7 @@ class _ServicesPageState extends State<ServicesPage> {
                   });
                 }
               },
-              child: scanbox(2, "Select image from gallery", image)),
+              child: scanbox(2, "Select image from gallery", "", image)),
           GestureDetector(
               onTap: () async {
                 setState(() {
@@ -218,9 +218,9 @@ class _ServicesPageState extends State<ServicesPage> {
                 }
                 // getImage();
               },
-              child: scanbox(3, "Select multiple images", multiimage)),
-          scanbox(4, "Convert image to PDF", imagetopng),
-          scanbox(5, "Sign your files", signature),
+              child: scanbox(3, "Select multiple images", "", multiimage)),
+          scanbox(4, "Convert image to PDF", "Soon", imagetopng),
+          scanbox(5, "Sign your files", "Soon", signature),
 
           // scanbox(2, "text", "icon"),
           // scanbox(3, "text", "icon"),
@@ -232,7 +232,7 @@ class _ServicesPageState extends State<ServicesPage> {
     ]);
   }
 
-  Widget scanbox(int box, String text, Icon icon) {
+  Widget scanbox(int box, String text, String update, Icon icon) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -251,6 +251,22 @@ class _ServicesPageState extends State<ServicesPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 70),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Text(update,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.nunito(
+                        textStyle: GoogleFonts.leagueSpartan(
+                      color: const Color(Colorz.white),
+                      fontSize: 15.sp,
+                    ))),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: icon,
