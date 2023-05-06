@@ -3,4 +3,5 @@ class Colorz {
   static const oranch = 0xffF24E1E;
   static const grey = 0xff686873;
   static const lightblue = 0xffD0DDFF;
+  static const white = 0xffFFFFFF;
 }
